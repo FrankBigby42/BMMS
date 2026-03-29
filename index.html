@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMMS | Belize Marine & Mooring Services</title>
+
+    <link rel="icon" type="image/jpg" href="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774743052/7ca433ab-9147-4b5f-b1ae-42c298574942_xs07st.jpg">
+
+    <meta property="og:title" content="BMMS | Belize Marine & Mooring Services">
+    <meta property="og:description" content="Exclusive provider of tug services at the Port Of Belize. Safe, timely, and efficient maritime solutions.">
+    <meta property="og:image" content="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774743052/7ca433ab-9147-4b5f-b1ae-42c298574942_xs07st.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .text-bmms-blue { color: #003380; }
+        .bg-bmms-blue { background-color: #003380; }
+        
+        /* Hero Video Setup */
+        .hero-container { 
+            position: relative; 
+            width: 100%; 
+            height: 75vh; 
+            background: #000;
+            overflow: hidden;
+        }
+        .video-frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        /* Standard Video Tag to remove Cloudinary Player UI */
+        .video-frame video { 
+            width: 100vw; 
+            height: 56.25vw; 
+            min-height: 75vh; 
+            min-width: 133.33vh; 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover; 
+        }
+
+        .hero-text-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            padding: 0 1.5rem;
+        }
+
+        .hero-title {
+            color: white;
+            font-weight: 900;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            text-shadow: 0 4px 25px rgba(0,0,0,0.7);
+            max-width: 1000px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Scroller Layout */
+        .media-scroll { display: flex; overflow-x: auto; gap: 1rem; scroll-snap-type: x mandatory; padding-bottom: 1.5rem; }
+        .media-scroll::-webkit-scrollbar { height: 4px; }
+        .media-scroll::-webkit-scrollbar-thumb { background: #003380; border-radius: 10px; }
+        
+        .media-scroll > * { 
+            flex: 0 0 85%; 
+            height: 20rem; 
+            scroll-snap-align: center; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+            background: black;
+        }
+        
+        .video-card-container iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (min-width: 768px) { .media-scroll > * { flex: 0 0 45%; } }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+    <header class="py-8 flex justify-center px-4 bg-white">
+        <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774743052/7ca433ab-9147-4b5f-b1ae-42c298574942_xs07st.jpg" 
+             alt="BMMS Logo" class="h-24 md:h-36 w-auto">
+    </header>
+
+    <audio id="bg-audio" loop>
+        <source src="https://res.cloudinary.com/dlu1zyllt/video/upload/v1774753457/PJIM_rvs21v.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="audio-btn" class="fixed bottom-8 right-8 z-[100] bg-bmms-blue text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center border-2 border-white hover:scale-110 transition-transform active:scale-95">
+        <span id="audio-icon" class="text-2xl">🔈</span>
+    </button>
+
+    <section class="hero-container">
+        <div class="video-frame">
+            <video autoplay loop muted playsinline>
+                <source src="https://res.cloudinary.com/dlu1zyllt/video/upload/v1774753457/5f66b763-5f25-4ae4-a612-90854516c55c_dkqxcu.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-text-overlay">
+            <h1 class="hero-title text-4xl md:text-6xl lg:text-8xl">
+                SHIP-ASSIST HORSEPOWER AND PRECISION AT YOUR SERVICE
+            </h1>
+        </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 py-20 text-center">
+        <h1 class="text-4xl md:text-6xl font-black text-gray-900 mb-6 tracking-tighter uppercase italic">Who We Are</h1>
+        <p class="text-lg md:text-2xl text-gray-600 leading-relaxed mb-16 font-light">
+            Belize Marine & Mooring Services provides ship-assist/harbor tug services, including the docking/undocking of ships and ATBs. We are the <span class="text-bmms-blue font-bold underline underline-offset-4">exclusive provider</span> at the Port Of Belize.
+        </p>
+        
+        <div class="bg-bmms-blue text-white p-10 md:p-16 rounded-[2rem] shadow-2xl relative overflow-hidden">
+            <div class="relative z-10">
+                <h3 class="text-xs font-bold uppercase tracking-[0.4em] mb-6 opacity-60">Our Mission</h3>
+                <p class="text-2xl md:text-4xl font-light italic leading-tight">
+                    "Our mission is to provide our customers with <span class="font-bold text-white">exceptional service</span>, service that not only meets their needs but is always safe, timely, and efficient."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="text-4xl font-black text-bmms-blue italic mb-12 uppercase border-b-4 border-bmms-blue inline-block">Fleet</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="fleet-card bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
+                <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774743586/IMG_7693_si1afc.jpg" class="w-full h-64 object-cover">
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-bmms-blue mb-3 uppercase tracking-tighter">Captain Daniel</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed font-light">Twin-screw tugboat with <span class="font-bold">EMD 16-645</span> diesel engines. Delivering 4,600 horsepower and a 50-ton bollard pull.</p>
+                </div>
+            </div>
+            <div class="fleet-card bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
+                <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774743586/818724c5-c1eb-41c7-981d-fd32964577db_kwgfkb.jpg" class="w-full h-64 object-cover">
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-bmms-blue mb-3 uppercase tracking-tighter">George II</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed font-light">High-performance 2,000 HP twin-screw tugboat with dual Detroit Diesel 12V71 engines for precision maneuvering.</p>
+                </div>
+            </div>
+            <div class="fleet-card bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
+                <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774743882/IMG_7635_hvs5i8.jpg" class="w-full h-64 object-cover">
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-bmms-blue mb-3 uppercase tracking-tighter">MR. G & MR. KHRIS</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed font-light">1,000 HP line boats specializing in barge shifting and securing tow lines with maximum agility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-black text-bmms-blue mb-20 uppercase text-center italic tracking-tighter">Professional Services</h2>
+
+            <div class="mb-32">
+                <h3 class="text-2xl font-bold mb-6 text-gray-800 border-l-8 border-bmms-blue pl-6 uppercase italic">Precision Ship Assist</h3>
+                <div class="media-scroll mb-8">
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=9c437fbb-7e39-4158-834a-18d6085599e7_e5qxjf" allowfullscreen></iframe></div>
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=cde5d1a3-975b-48f0-ba9c-5231d810f05b_hhzzki" allowfullscreen></iframe></div>
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=343c1daa-ccdf-4eec-884d-ccc37480c447_dhb18i" allowfullscreen></iframe></div>
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=7fa7ff49-fe2c-4ab9-9eb3-757c44513bd3_fevmyl" allowfullscreen></iframe></div>
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=d7434e45-ff87-4507-a1e5-1626ebc66ed0_ytex51" allowfullscreen></iframe></div>
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=a6043111-3ec9-43fe-8806-822f428f0d23_dkc6tv" allowfullscreen></iframe></div>
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=6aed2794-96f5-41f6-8891-bc0b27b5a552_k2fv8t" allowfullscreen></iframe></div>
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=5a07ce83-5006-4047-92d0-dd0e6c4e8bd3_znyh7m" allowfullscreen></iframe></div>
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=b05a5df8-297a-4f0b-bbe4-03965dbbfc31_va15gp" allowfullscreen></iframe></div>
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=9276b349-e7eb-4776-8b09-d32c057c210e_fckj0b" allowfullscreen></iframe></div>
+                </div>
+                <p class="text-gray-600 text-lg leading-relaxed font-light">Every day, BMMS tugs exercise precision to move tonnage and make critical maneuvers on ever-changing waters. Our clients are our top priority and ship-assist movement is what we do.</p>
+            </div>
+
+            <div class="mb-32">
+                <h3 class="text-2xl font-bold mb-6 text-gray-800 border-l-8 border-bmms-blue pl-6 uppercase italic">Dredging & Reclamation</h3>
+                <div class="media-scroll mb-8">
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=1699ba0c-41c3-4cbc-a91b-99e268c7d2ce_iheqbc" allowfullscreen></iframe></div>
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=4d814137-234c-48cd-94b6-f03aa9ed912a_my8zaq" allowfullscreen></iframe></div>
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742422/a2a00903-51ac-4084-8fae-6e9d040ff74d_svrdrw.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742422/617f3bc4-d9fa-4f16-92c8-1cc9a5c2038f_qj562p.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742422/ae8bc127-e35d-4551-aea4-7f18ba462e1a_sspejt.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742422/18abd239-d448-40c2-92b2-21f4f132e847_gfurlt.jpg" class="object-cover">
+                    
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=0b002e0e-c5e9-4a06-9485-762b5589cfcb_xllotr" allowfullscreen></iframe></div>
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774748103/06aa97d0-5c2c-4570-9a9f-5a9c4b4ce88f_jcv5o1.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774748103/4c6c119c-f2e4-4d0b-a206-f49cce978a9f_jrd3kh.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774748102/e4ab808e-8b33-4fe8-aff0-6e39fbc693e9_io6po6.jpg" class="object-cover">
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=3d2c436f-8de7-4d8b-b70d-73f3302da10f_xsy5qr" allowfullscreen></iframe></div>
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774748101/b347f728-f381-49ea-b7dd-703078860a6e_ttoy1v.jpg" class="object-cover">
+                    <div class="video-card-container"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dlu1zyllt&public_id=66c598b2-99e5-4fb1-aace-34106db66c1d_sxwwki" allowfullscreen></iframe></div>
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774748100/e5bb21d4-6a59-40c2-8151-d15ec9d26441_wahn3p.jpg" class="object-cover">
+                </div>
+                <p class="text-gray-600 text-lg leading-relaxed font-light">Supporting maritime infrastructure through expert dredging and reclamation projects. We provide the equipment and expertise necessary to maintain navigable waterways and expand coastal capacities.</p>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 text-gray-800 border-l-8 border-bmms-blue pl-6 uppercase italic">Offshore Vessel Support</h3>
+                <div class="media-scroll mb-8">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742743/70c3be3d-d8c3-4fe6-9912-db3845f76d84_hiiy4x.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742744/cf05943c-97c2-48ba-ae47-0d755f6031fb_iq3ekx.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742744/5158b1f2-cfec-4fc9-adbd-2a05b52c2bf8_yq7yxv.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742744/e3f6d3c8-9da4-4a35-a39a-63187aceadaf_eleuvp.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742743/fea5bfa0-fd81-4933-ab87-cbe01f6263b1_jvd49j.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742744/5016768f-bdd4-4443-99aa-8c30399a648c_frpxdz.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742743/6f587856-180e-43ba-8db1-de93b80a247c_zylucs.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742743/f0c43516-d5ae-4d71-a7dc-9b7688ba4b22_nnn8x8.jpg" class="object-cover">
+                    <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774742744/3d0fa655-835c-4905-a01a-e64744d9cb1b_sh5zko.jpg" class="object-cover">
+                </div>
+                <p class="text-gray-600 text-lg leading-relaxed font-light">From personnel transport to supply logistics, our fleet is equipped to handle the rigorous demands of offshore vessel support, ensuring safety and efficiency in open waters.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-24">
+        <h2 class="text-4xl font-black text-bmms-blue italic mb-12 uppercase border-b-4 border-bmms-blue inline-block tracking-tighter">Marina / Fleet Location</h2>
+        
+        <div class="rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 mb-10">
+            <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774801807/d74cffe7-d61f-4224-b2f4-0fa1dccda816_x912tm.jpg" 
+                 alt="Marina Location" class="w-full h-auto object-cover max-h-[600px]">
+        </div>
+        
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8 bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-gray-50">
+            <div class="space-y-2">
+                <p class="text-bmms-blue text-2xl md:text-4xl font-black uppercase italic tracking-tighter">4 Miles George Price Highway</p>
+                <p class="text-gray-500 text-xl font-light uppercase tracking-[0.2em]">Belize City, Belize</p>
+            </div>
+            
+            <a href="https://share.google/8MJI2FtKz1c4NuQS7" target="_blank" class="inline-flex items-center justify-center gap-3 px-10 py-6 bg-bmms-blue text-white font-black uppercase italic rounded-2xl shadow-xl hover:bg-blue-900 transition-all transform hover:-translate-y-1 active:scale-95 text-lg">
+                <span class="text-2xl">📍</span>
+                <span>Get Directions</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-white pt-24 pb-12 text-center border-t border-gray-100">
+        <h2 class="text-2xl md:text-4xl font-black text-bmms-blue mb-12 uppercase italic tracking-tighter px-4">Operations/Dispatch (24 hr)</h2>
+        <div class="max-w-xl mx-auto px-6 space-y-4 mb-16">
+            <a href="tel:+5016141117" class="flex items-center justify-center gap-4 w-full py-5 bg-green-600 text-white font-bold rounded-xl shadow-lg text-xl md:text-2xl hover:bg-green-700 transition-all">
+                <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.412.001 12.045c0 2.12.554 4.189 1.604 6.035L0 24l6.105-1.602a11.832 11.832 0 005.94 1.603h.005c6.635 0 12.048-5.414 12.051-12.047a11.818 11.818 0 00-3.518-8.498z"/></svg>
+                <span>Cell: +501-614-1117</span>
+            </a>
+            <a href="tel:+5012234224" class="flex items-center justify-center gap-4 w-full py-5 bg-bmms-blue text-white font-bold rounded-xl shadow-lg text-xl md:text-2xl hover:bg-blue-900 transition-all">
+                <span>📞 Office: +501-223-4224</span>
+            </a>
+            <a href="mailto:georgeorellanabmms@hotmail.com" class="flex items-center justify-center w-full py-5 bg-white border border-gray-200 text-bmms-blue font-bold rounded-xl shadow-sm hover:bg-gray-50 transition-all px-4">
+                <span class="break-all text-xs md:text-lg italic">✉️ georgeorellanabmms@hotmail.com</span>
+            </a>
+        </div>
+
+        <div class="flex justify-center px-4">
+            <img src="https://res.cloudinary.com/dlu1zyllt/image/upload/v1774743052/7ca433ab-9147-4b5f-b1ae-42c298574942_xs07st.jpg" 
+                 alt="BMMS Logo Large" class="h-48 md:h-72 w-auto opacity-90">
+        </div>
+    </footer>
+
+    <div class="bg-gray-50 py-10 text-center">
+        <div class="max-w-4xl mx-auto px-6 text-gray-400 text-[10px] uppercase tracking-widest leading-relaxed">
+            &copy; 2026 Belize Marine & Mooring Services (BMMS). All Rights Reserved.
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('bg-audio');
+        const btn = document.getElementById('audio-btn');
+        const icon = document.getElementById('audio-icon');
+
+        btn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                icon.innerText = '🔊';
+                btn.classList.add('animate-pulse');
+                btn.classList.add('bg-blue-600');
+            } else {
+                audio.pause();
+                icon.innerText = '🔈';
+                btn.classList.remove('animate-pulse');
+                btn.classList.remove('bg-blue-600');
+            }
+        });
+    </script>
+
+</body>
+</html>
